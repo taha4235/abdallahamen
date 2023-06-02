@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+.logo{
+    width: 30px;
+    height: 30px;
+    mix-blend-mode:hard-light;
+    background-color: transparent;
+}
+
+.navbar .navbar-nav .nav-link {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+.navbar-brand{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+/* body{
+    background-image: url(backo.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+.information{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    text-transform: capitalize;
+
+}@media(max-width:400px){
+    .information h3{
+        font-size: 15px;
+    }
+    .search-container{
+        max-width: 300px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+    .search-container button{
+        height: 50px;
+    }
+    .search-container input{
+        height: 50px;
+    }
+}
+.search-container{
+    display: grid;
+    grid-template-columns: 9fr 1fr;
+    position: relative;
+    top: 4px;
+    height: 50px;
+    width: 400px;
+}
+.search-container input{
+    outline: 0;
+    border: 0;
+background-color: whitesmoke;
+border-top-left-radius: 33px;
+border-bottom-left-radius: 33px;
+padding: 0.5em;
+}
+.search-container button{
+    outline: 0;
+    border: 0;
+    background-color:royalblue;
+    color: white;
+    cursor: pointer;
+    border-top-right-radius: 33px;
+    border-bottom-right-radius: 33px;
+    
+}

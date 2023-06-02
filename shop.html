@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shop</title>
+    <link rel="stylesheet" href="shop.css">
+    <link rel="icon" href="logo.jpg">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <h3 class="title"> <span id="card"></span> <i class="fa-solid fa-cart-shopping"></i> start shoping</h3>
+        <div class="mobile-container">
+            <div class="mobiles_containers">
+                <div class="mobile_card">
+                    <img src="WhatsApp Image 2023-05-26 at 10.23.45 AM (1).jpeg" alt="">
+                    <div class="description">
+                        <h4 class="title_name">iphone name</h4>
+                        <div class="order">
+                            <span>900$ <sub>20$</sub></span>
+                            <br><button class="buttons" id="buttons1" onclick="addProduct('WhatsApp Image 2023-05-26 at 10.23.45 AM (1).jpeg', 'Iphone', '900$')">add to
+                                cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile_card">
+                    <img src="WhatsApp Image 2023-05-26 at 10.23.45 AM (2).jpeg" alt="">
+                    <div class="description">
+                        <h4 class="title_name">iphone name</h4>
+                        <div class="order">
+                            <span>900$ <sub>20$</sub></span>
+                            <br><button class="buttons" id="buttons2" onclick="addProduct('WhatsApp Image 2023-05-26 at 10.23.45 AM (2).jpeg', 'Iphone', '900$')">add to
+                                cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobiles_containers">
+                <div class="mobile_card">
+                    <img src="WhatsApp Image 2023-05-26 at 10.23.46 AM (1).jpeg" alt="">
+                    <div class="description">
+                        <h4 class="title_name">camon name</h4>
+                        <div class="order">
+                            <span>900$ <sub>20$</sub></span>
+                            <br><button class="buttons" id="buttons3" onclick="addProduct('WhatsApp Image 2023-05-26 at 10.23.46 AM (1).jpeg', 'Camon', '900$')">add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile_card">
+                    <img src="iphones.jpeg" alt="">
+                    <div class="description">
+                        <h4 class="title_name">iphone name</h4>
+                        <div class="order">
+                            <span>900$ <sub>20$</sub></span>
+                            <br><button class="buttons" id="buttons4" onclick="addProduct('iphones.jpeg', 'Iphone', '900$')">add to
+                                cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobiles_containers">
+                <div class="mobile_card">
+                    <img src="images2.jpeg" alt="">
+                    <div class="description">
+                        <h4 class="title_name">iphone name</h4>
+                        <div class="order">
+                            <span>900$ <sub>20$</sub></span>
+                            <br><button class="buttons" id="buttons5" onclick="addProduct('images2.jpeg', 'Iphone', '900$')">add to
+                                cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile_card">
+                    <img src="iphonex.jpeg" alt="">
+                    <div class="description">
+                        <h4 class="title_name">iphone name</h4>
+                        <div class="order">
+                            <span>900$ <sub>20$</sub></span>
+                            <br><button class="buttons" id="buttons6" onclick="addProduct('iphonex.jpeg', 'Iphone', '900$')">add to
+                                cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Product Image</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="body">
+
+            </tbody>
+        </table>
+    </div>
+    <script src="javascript.js"></script>
+    <script>
+        var card = document.getElementById("card");
+var counter = 0; // Counter to generate unique ids for input elements
+
+function addProduct(image, name, price) {
+  var body = document.getElementById("body");
+  var row = document.createElement("tr");
+  var imageCell = document.createElement("td");
+  var nameCell = document.createElement("td");
+  var priceCell = document.createElement("td");
+  var quantityCell = document.createElement("td");
+  var totalCell = document.createElement("td");
+
+  imageCell.innerHTML = '<img src="' + image + '" alt="">';
+  nameCell.textContent = name;
+  priceCell.textContent = price;
+
+  var quantityInput = document.createElement("input");
+  var quantityId = "quantity_" + counter; 
+  quantityInput.setAttribute("type", "number");
+  quantityInput.setAttribute("name", "");
+  quantityInput.setAttribute("id", quantityId);
+  quantityCell.appendChild(quantityInput);
+  var total = document.createElement("span");
+  total.textContent = 0;
+  totalCell.appendChild(total);
+  row.appendChild(imageCell);
+  row.appendChild(nameCell);
+  row.appendChild(priceCell);
+  row.appendChild(quantityCell);
+  row.appendChild(totalCell);
+  body.appendChild(row);
+  quantityInput.addEventListener("input", () => {
+    let price= 900;
+    var quantityValue = quantityInput.value;
+    total.textContent = price * quantityValue;
+  });
+
+  counter++; 
+}
+
+    </script>
+</body>
+
+</html>

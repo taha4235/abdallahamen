@@ -1,0 +1,92 @@
+*{
+    margin:0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+.custom-container {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 500px;
+    margin-top: 70px;
+  }
+  
+  @media (min-width: 900px) {
+    .custom-container {
+      display: flex;
+    }
+    .container{
+        height: 400px;
+    }
+  }
+  @media(max-width:600px){
+    .container{
+        height: 400px;
+    }
+  }
+  
+  .custom-container .container {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .custom-container .container:first-child {
+    background-color: #f8f9fa;
+  }
+  
+  .custom-container .container:last-child {
+    background-color: #e9ecef;
+  }
+  
+  #container_1{
+    background-image: url(https://th.bing.com/th?id=OIP.yspm7o4KNZkZqrfZ0hDilgHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2);
+    background-position: center;
+    background-size: cover;
+  }
+  .informations{
+    position: relative;
+    top: 140px;
+    color: #333;
+  }
+  .informations h3{
+    font-size: 21px;
+  }
+  .informations button{
+    width: 150px;
+    height: 40px;
+    outline: 0;
+    border: 0;
+    background-color: rgb(30, 195, 255);
+    color: white;
+    padding: 0.4em;
+    border-radius: 0.3em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  #element{
+    color: #333;
+    text-transform: capitalize;
+  }
+  .informa h3{
+    color: #333;
+    text-transform: capitalize;
+  }
+  .informa{
+    margin-top: 30px;
+  }
+  .social_media ul li{
+    list-style: none;
+    display: inline-block;
+  }
+  .social_media ul li a{
+    padding: 10px;
+    background-color: dodgerblue;
+    color: white;
+    border-radius: 50%;
+  }
+  .social_media ul li a:focus{
+    transform: rotate(20deg);
+    transition: 1s;
+  }
+  
